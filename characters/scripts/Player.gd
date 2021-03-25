@@ -17,6 +17,7 @@ signal died
 
 
 func _ready():
+	connect("body_entered", self, "_on_Player_body_entered")
 	screen_size = get_viewport_rect().size
 
 func _process(delta):	
