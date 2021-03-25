@@ -33,8 +33,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Dodge The Creeps"
+config/description="Dodge all the enemy mobs"
 run/main_scene="res://_levels/level_01.tscn"
-config/icon="res://icon.png"
+config/icon="res://dodge_assets/art/playerGrey_up1.png"
 
 [display]
 
