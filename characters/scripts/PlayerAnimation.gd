@@ -3,6 +3,7 @@ extends AnimatedSprite
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	get_parent().connect("moving", self, "_start_player_animation")
 	
 func _start_player_animation(dir : Vector2):

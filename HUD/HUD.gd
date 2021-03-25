@@ -10,7 +10,9 @@ onready var message_timer : Timer = $MessageTimer
 onready var start_button : Button = $StartButton
 
 func _ready():
+# warning-ignore:return_value_discarded
 	start_button.connect("pressed", self, "_on_StartButton_pressed")
+# warning-ignore:return_value_discarded
 	message_timer.connect("timeout", self, "_on_MessageTimer_timeout")
 
 func _on_MessageTimer_timeout():

@@ -14,10 +14,15 @@ onready var game_music : AudioStreamPlayer = $Music
 onready var HUD : HUD = $HUD
 
 func _ready():
+# warning-ignore:return_value_discarded
 	HUD.connect("start_game", self, "_on_start_game_gameStarted")
+# warning-ignore:return_value_discarded
 	player.connect("hit", self, "gameOver")
+# warning-ignore:return_value_discarded
 	mob_timer.connect("timeout", self, "_on_mob_timer_timeout")
+# warning-ignore:return_value_discarded
 	score_timer.connect("timeout", self, "_on_score_timer_timeout")
+# warning-ignore:return_value_discarded
 	start_timer.connect("timeout", self, "_on_start_timer_timeout")
 	randomize()
 	

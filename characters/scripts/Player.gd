@@ -13,10 +13,10 @@ var screen_size : Vector2 = Vector2()
 
 signal moving(dir)
 signal hit
-signal died
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_Player_body_entered")
 	screen_size = get_viewport_rect().size
 
@@ -32,15 +32,15 @@ func _process(delta):
 	
 
 func _getVelocity() -> Vector2:
-	var dir : Vector2
-	var velocity : Vector2
+	var dir : Vector2 = Vector2()
+	var vel : Vector2 = Vector2()
 	
 	dir.x = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
 	dir.y = -int(Input.is_action_pressed("ui_up")) + int(Input.is_action_pressed("ui_down"))
 
 	if(dir.length() > 0):
-		velocity = dir.normalized() * speed
-	return velocity
+		vel = dir.normalized() * speed
+	return vel
 	
 
 func _moveAnimation(dir : Vector2):
@@ -53,6 +53,7 @@ func start(pos : Vector2):
 	collider.disabled = false
 
 
+# warning-ignore:unused_argument
 func _on_Player_body_entered(body):
 	hide()
 	emit_signal("hit")
